@@ -5,11 +5,22 @@ description = "Build your projects with ease and style!"
 authors = ["kaiserthe13th <superkerem13@gmail.com>"]
 license = "MIT"
 readme = "README.md"
+packages = [
+    { include = "makeup", from = "src" }
+]
+
+classifiers = [
+    "Topic :: Software Development :: Build Tools"
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+pydantic = "^1.10.2"
 
+[tool.poetry.scripts]
+makeup = 'makeup.__main__:main'
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+

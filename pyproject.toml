@@ -16,6 +16,11 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.8"
 pydantic = "^1.10.2"
+python-dotenv = "^0.21.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "*"
+pre-commit = "*"
 
 [tool.poetry.scripts]
 makeup = 'makeup.__main__:main'

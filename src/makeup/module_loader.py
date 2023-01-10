@@ -12,7 +12,9 @@ class Module:
         self.__tasks_cache = []
 
     def _load_module(self) -> ModuleType:
-        spec = importlib.util.spec_from_file_location(self._m_name, f'./{self._m_name}.py')
+        spec = importlib.util.spec_from_file_location(
+            self._m_name, f"./{self._m_name}.py"
+        )
         if spec:
             taskmod = importlib.util.module_from_spec(spec)
             sys.modules[self._m_name] = taskmod

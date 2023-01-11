@@ -10,7 +10,9 @@ packages = [
 ]
 
 classifiers = [
-    "Topic :: Software Development :: Build Tools"
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Utilities"
 ]
 
 [tool.poetry.dependencies]

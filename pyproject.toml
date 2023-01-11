@@ -24,6 +24,9 @@ python-dotenv = "^0.21.0"
 black = "*"
 pre-commit = "*"
 
+[tool.poetry.group.test.dependencies]
+pytest = "^7.2.0"
+
 [tool.poetry.scripts]
 makeup = 'makeup.__main__:main'
 

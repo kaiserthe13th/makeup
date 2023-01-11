@@ -15,6 +15,13 @@ def say_hey():
 
 @task()
 def check_env(name: str):
+    """
+    Checks the environment
+
+    Arguments:
+        name: str =
+            The name of the variable to check
+    """
     val = get_env(name)
     if val is not None:
         print(f"{name} = {val}")
@@ -23,4 +30,7 @@ def check_env(name: str):
 
 @task()
 def add(*args: Union[int, float]):
-      print(reduce(lambda x, y: x + y, args, 0))
+    """
+    Adds numbers together
+    """
+    print(reduce(lambda x, y: x + y, args, 0))

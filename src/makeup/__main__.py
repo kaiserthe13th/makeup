@@ -2,6 +2,7 @@ from argparse import ArgumentParser
 import os
 import pathlib
 import sys
+import textwrap
 from typing import List
 from makeup.module_loader import Module
 
@@ -113,7 +114,28 @@ def main():
             print("available tasks:")
             taskmod = Module(args.module)
             for task in taskmod.tasks():
-                print("-", pretty_name(task.__name__))
+                print(
+                    "-",
+                    pretty_name(task._makeup_task.name),
+                    end="",
+                )
+                if (
+                    args.verbosity > -1
+                    and task._makeup_task.doc
+                    and task._makeup_task.doc.strip()
+                ):
+                    if args.verbosity > 0:
+                        print(end="\n  # ")
+                        print(
+                            textwrap.indent(
+                                textwrap.dedent(task._makeup_task.doc).strip(),
+                                "    ",
+                            ).lstrip()
+                        )
+                    else:
+                        print(f" # {task._makeup_task.doc.strip().splitlines()[0]}")
+                else:
+                    print()
         elif args.cmd == "init":
             print("Initializing your project...")
             with open(

@@ -15,6 +15,11 @@ MakeUp is an easy to use language agnostic build tool inspired by the likes of [
   $ pip install pymakeup
   or
   $ poetry add pymakeup
+  
+  Not yet, for now do:
+  $ git clone https://github.com/kaiserthe13th/makeup.git
+  $ cd makeup
+  $ pip install .
   ```
 2. Start a new project 📜
   
